@@ -2,7 +2,7 @@ var Test = {
 	container: '',
 	init : function( _container ){
 		this.container = _container;
-		document.addEventListener('deviceready', this.onDeviceReady, false);
+		document.addEventListener('deviceready', Test.onDeviceReady, false);
 		//this.onDeviceReady();
 	},
 	
