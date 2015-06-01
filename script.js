@@ -16,7 +16,7 @@ var Test = {
 		/*document.addEventListener('menubutton', function(){
 			self.log('push menu');
 		}, false);*/
-		document.addEventListener('menubutton', self.pushMenu, false);
+		document.addEventListener('menubutton', Test.pushMenu, false);
 		
 		document.addEventListener('resume', function(){
 			self.log('resume');
