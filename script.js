@@ -9,20 +9,22 @@ var Test = {
 		var self = this;
 		//document.addEventListener('deviceready', this.onDeviceReady, false);
 		document.addEventListener("deviceready", function(){
-			//alert("123");
+
 			self.log('deviceready inner function');
 		},false);
-		//this.onDeviceReady();
-		//this.log(typeof(Test.onDeviceReady));
-		//this.log('this ready='+ typeof(this.onDeviceReady));
-
-		document.addEventListener('menubutton', function(){
+		
+		/*document.addEventListener('menubutton', function(){
 			self.log('push menu');
-		}, false);
+		}, false);*/
 		document.addEventListener('menubutton', this.pushMenu, false);
 		
 		document.addEventListener('resume', function(){
 			self.log('resume');
+		}, false);
+		
+		document.querySelector('.btn').addEventListener('click', function(){
+			self.pushMenu();
+			self.log('pushMenu from button');
 		}, false);
 	},
 	
