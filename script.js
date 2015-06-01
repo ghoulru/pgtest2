@@ -1,6 +1,6 @@
 var Test = {
 	container: '',
-	init : function( _container ){
+	initialize: function( _container ){
 		this.container = _container;
 		this.bindEvents();
 	},
@@ -22,4 +22,4 @@ var Test = {
 	log: function( str ){
 		document.querySelector('.log').innerHTML += str + '<br />';
 	}
-}
+};
