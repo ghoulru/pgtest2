@@ -9,7 +9,8 @@ var Test = {
 		//document.addEventListener('deviceready', this.onDeviceReady, false);
 		document.addEventListener("deviceready", function(){
 			alert("123");
-		},true);
+			this.log('deviceready inner function');
+		},false);
 		//this.onDeviceReady();
 		//this.log(typeof(Test.onDeviceReady));
 		//this.log('this ready='+ typeof(this.onDeviceReady));
