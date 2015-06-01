@@ -11,6 +11,9 @@ var Test = {
 		this.log(typeof(Test.onDeviceReady));
 		this.log('this ready='+ typeof(this.onDeviceReady));
 
+		document.addEventListener('menubutton', function(){
+			this.log('push menu');
+		}, false);
 	},
 	
 	onDeviceReady: function(){
