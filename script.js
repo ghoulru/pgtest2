@@ -1,3 +1,7 @@
+var pushMenuOutside = function(){
+	Test.log('pushMenuOutside');
+}
+
 var Test = {
 	container: '',
 	initialize: function( _container ){
@@ -9,14 +13,13 @@ var Test = {
 		var self = this;
 		//document.addEventListener('deviceready', this.onDeviceReady, false);
 		document.addEventListener("deviceready", function(){
-
 			self.log('deviceready inner function');
 		},false);
 		
 		/*document.addEventListener('menubutton', function(){
 			self.log('push menu');
 		}, false);*/
-		document.addEventListener('menubutton', Test.pushMenu, false);
+		document.addEventListener('menubutton', pushMenuOutside, false);
 		
 		document.addEventListener('resume', function(){
 			self.log('resume');
