@@ -9,7 +9,7 @@ var Test = {
 		var self = this;
 		//document.addEventListener('deviceready', this.onDeviceReady, false);
 		document.addEventListener("deviceready", function(){
-			alert("123");
+			//alert("123");
 			self.log('deviceready inner function');
 		},false);
 		//this.onDeviceReady();
@@ -19,8 +19,11 @@ var Test = {
 		document.addEventListener('menubutton', function(){
 			self.log('push menu');
 		}, false);
+		document.addEventListener('menubutton', this.pushMenu, false);
 		
-		document.addEventListener('resume', this.onResume, false);
+		document.addEventListener('resume', function(){
+			self.log('resume');
+		}, false);
 	},
 	
 	onDeviceReady: function(){
@@ -28,9 +31,9 @@ var Test = {
 		document.querySelector(this.container).innerHTML = 'device ready';
 	},
 	
-	onResume: function(){
-		this.log('onResume work');
-		document.querySelector(this.container).innerHTML = 'device onResume';
+	pushMenu: function(){
+		this.log('pushMenu work');
+		document.querySelector(this.container).innerHTML = 'device pushMenu';
 	},
 	log: function( str ){
 		document.querySelector('.log').innerHTML += str + '<br />';
