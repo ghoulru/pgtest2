@@ -30,7 +30,9 @@ var Test = {
 			self.log('pushMenu from button');
 		}, false);
 		
-		document.querySelector('.btn-ajax').addEventListener('click', getAjaxData, false);
+		document.querySelector('.btn-ajax').addEventListener('click', function(){
+			self.getAjaxData();			
+		}, false);
 	},
 	
 	onDeviceReady: function(){
@@ -45,6 +47,16 @@ var Test = {
 	
 	getAjaxData: function(){
 		this.log('getAjaxData work');
+
+		$.ajax({
+			type: 'POST',
+			url: 'http://design.ghoul.ru/pgtest2.php',
+			cache: false,
+			data: {}
+		}).done(function ($data){
+			this.log( $data );
+			this.log( $data.orderId );
+		});
 	},	
 	
 	log: function( str ){
