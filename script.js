@@ -29,6 +29,8 @@ var Test = {
 			self.pushMenu();
 			self.log('pushMenu from button');
 		}, false);
+		
+		document.querySelector('.btn-ajax').addEventListener('click', getAjaxData, false);
 	},
 	
 	onDeviceReady: function(){
@@ -40,7 +42,13 @@ var Test = {
 		this.log('pushMenu work');
 		document.querySelector(this.container).innerHTML = 'device pushMenu';
 	},
+	
+	getAjaxData: function(){
+		this.log('getAjaxData work');
+	},	
+	
 	log: function( str ){
 		document.querySelector('.log').innerHTML += str + '<br />';
 	}
 };
+

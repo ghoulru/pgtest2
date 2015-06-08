@@ -15,5 +15,7 @@
     </author>
 
     <gap:platform name="android" />
+<access origin="http://ghoul.ru" subdomains="true" /> 
+
 
 </widget>
