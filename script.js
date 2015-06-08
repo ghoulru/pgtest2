@@ -47,15 +47,19 @@ var Test = {
 	
 	getAjaxData: function(){
 		this.log('getAjaxData work');
-
+		var self = this;
 		$.ajax({
 			type: 'POST',
 			url: 'http://design.ghoul.ru/pgtest2.php',
+			dataType: "jsonp",		
 			cache: false,
-			data: {}
-		}).done(function ($data){
-			this.log( $data );
-			this.log( $data.orderId );
+			crossDomain: true,
+			jsonpCallback: 'getData',
+			data: {}, 
+			success: function (data){
+				console.log( data );
+				self.log(data.orderId + ' = ' + data.totalPrice);
+			}
 		});
 	},	
 	
